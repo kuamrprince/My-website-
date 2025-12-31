@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Random Modern Website</title>
+<style>
+
+/* GLOBAL RESET & STYLING */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #4e54c8, #8f94fb);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* MAIN CARD */
+.container {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    padding: 40px 30px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+/* BUTTON STYLING */
+button {
+    background: #fff;
+    color: #4e54c8;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+    outline: 3px solid #fff;
+}
+
+button:hover {
+    background: #4e54c8;
+    color: #fff;
+    transform: scale(1.1);
+    outline: 3px solid #8f94fb;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* RANDOM TEXT */
+.random-text {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Welcome!</h1>
+    <p>Click the button to generate random text.</p>
+    <button id="randomBtn">Generate Random!</button>
+
+    <div class="random-text" id="randomText"></div>
+</div>
+
+<script>
+// LIST OF RANDOM TEXTS
+const randomList = [
+    "You are awesome!",
+    "Keep learning code!",
+    "Today will be great!",
+    "Stay positive, always!",
+    "You made this site!",
+    "Your future is bright!",
+    "Magic happens here!",
+    "Dream big, work hard!"
+];
+
+const randomBtn = document.getElementById("randomBtn");
+const randomText = document.getElementById("randomText");
+
+randomBtn.addEventListener("click", () => {
+    const idx = Math.floor(Math.random() * randomList.length);
+    randomText.innerText = randomList[idx];
+});
+</script>
+
+</body>
+</html>
